@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To My Love 💖</title>
+    <link
+      rel="icon"
+      href="./img/one (3).jpg"
+      type="image/x-icon"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(to right top, #007bff, #66b2ff);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        min-height: 100vh;
+      }
+
+      .container {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 25px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        max-width: 500px;
+        width: 100%;
+        text-align: center;
+        animation: fadeIn 1.2s ease-in-out;
+        color: #333;
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      h1 {
+        color: #007bff;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin: 15px 0;
+      }
+
+      .upload-box {
+        margin-top: 20px;
+      }
+
+      input[type="file"] {
+        display: none;
+      }
+
+      label.upload-btn {
+        display: inline-block;
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        margin-bottom: 10px;
+      }
+
+      label.upload-btn:hover {
+        background-color: #0056b3;
+      }
+
+      img#preview {
+        margin-top: 15px;
+        max-width: 100%;
+        height: auto;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      footer {
+        margin-top: 30px;
+        font-size: 0.9rem;
+        color: #e0e0e0;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          padding: 15px;
+        }
+
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        p {
+          font-size: 0.95rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>To My Beautiful Queen 👑</h1>
+      <p>
+        💕 I’m lucky to have you. Always and forever. "In you, I’ve found the
+        love of my life and my closest, truest friend." "You are the reason I
+        smile a little more, cry a little less, and love a lot more." "Meeting
+        you was fate, becoming your friend was a choice, but falling in love
+        with you was beyond my control." "I didn’t plan it, but you are the best
+        thing that ever happened to me." "I still get butterflies, even though
+        I’ve seen you a hundred times." "You make my world brighter, my heart
+        lighter, and my life so much better." "Every love story is beautiful,
+        but ours is my favorite." "Your voice is my favorite sound, your name is
+        my favorite word. <br />
+        Love You Girlei!!!
+      </p>
+      <p>Developer Mark(T)</p>
+
+      <div class="upload-box">
+        <label for="imgInput" class="upload-btn"
+          >Upload Your Beautiful Photo</label
+        >
+        <input type="file" id="imgInput" accept="image/*" />
+        <br />
+        <img
+          id="preview"
+          src="./img/one (1).jpg"
+          alt="Your picture will appear here"
+        />
+      </div>
+    </div>
+
+    <footer>Made with ❤️ by Developr Mark Who Loves You</footer>
+
+    <script>
+      const imgInput = document.getElementById("imgInput");
+      const preview = document.getElementById("preview");
+
+      imgInput.addEventListener("change", function () {
+        const file = this.files[0];
+        if (file && file.type.startsWith("image/")) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            preview.src = e.target.result;
+          };
+          reader.readAsDataURL(file);
+        } else {
+          alert("Please select a valid image file.");
+        }
+      });
+    </script>
+  </body>
+</html>
